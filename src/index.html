@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<style>
+		#app {
+			padding: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<form>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
+				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="pass-input" placeholder="Password">
+			</div>
+			<div class="form-group form-check">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Check me out</label>
+			</div>
+			<div id="error-container">
+
+			</div>
+			<button id="btn-login" type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+
+	<script>
+
+		const btnSubmit = document.querySelector('button#btn-login');
+
+		btnSubmit.addEventListener('click', (e) => {
+			e.preventDefault();
+			const email = document.querySelector('input#email-input').value;
+			const password = document.querySelector('input#pass-input').value;
+			if (email === 'admin@mail.com' && password === 'theRealPass123') {
+				window.location = '/welcome.html';
+			} else {
+				const errorEl = document.createElement('p');
+				errorEl.id = 'container-error'
+				const errorContainer = document.querySelector('div#error-container');
+				errorEl.textContent = 'Así no se puede, credenciales incorrectas';
+				errorContainer.appendChild(errorEl);
+			}
+		});
+
+	</script>
+
+</body>
+
+</html>
