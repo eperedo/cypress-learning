@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+cypress/videos
+.DS_store

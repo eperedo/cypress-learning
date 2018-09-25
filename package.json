@@ -6,7 +6,8 @@
 	"scripts": {
 		"co": "cypress open",
 		"dev": "http-server ./src -o",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "cypress run --browser chrome --spec 'cypress/integration/login.spec.js'",
+		"test:video": "cypress run --spec 'cypress/integration/login.spec.js'"
 	},
 	"keywords": [],
 	"author": "Eduardo P. Rivero <jrperedo@gmail.com> (https://blog.eperedo.com/)",
