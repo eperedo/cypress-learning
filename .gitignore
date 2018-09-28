@@ -74,3 +74,4 @@ typings/
 
 cypress/videos
 .DS_store
+*.mp4

@@ -11,7 +11,7 @@
 //
 // -- This is a parent command --
 Cypress.Commands.add('login', ({ email, password }) => {
-	cy.visit('http://localhost:8081');
+	cy.visit('/');
 	cy.get('input#email-input').type(email);
 	cy.get('input#pass-input').type(password);
 	cy.get('button#btn-login').click();
